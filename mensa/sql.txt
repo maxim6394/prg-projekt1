@@ -1,0 +1,10 @@
+
+
+CREATE TABLE IF NOT EXISTS `rating` (
+  `id` int(11) NOT NULL,
+  `dish_name` varchar(128) NOT NULL,
+  `rating` tinyint(4) NOT NULL,
+  `comment` varchar(128) DEFAULT NULL,
+  `user_fingerprint` int(32) DEFAULT NULL,
+  `time_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
