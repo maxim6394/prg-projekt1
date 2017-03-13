@@ -1,12 +1,12 @@
 body {
-  font-family: Futura;
+  font-family: Arial;
   font-size: 1vw;
  	color: black;
   background-color: rgba(192,192,192,0.8);
   background-image: url("Tablett.png");
   background-size: cover;
-
-  /* border: 0.1vw solid red; /* nur zum Test*/
+  background-repeat: repeat-y;
+  /*border: 0.1vw solid red; /* nur zum Test*/
   position: absolute;
   width:100%;
   height: auto;
@@ -15,120 +15,163 @@ body {
 }
 
 h1 {
-	font-size: 7vw;
+  font-family: Futura;
+  font-size: 7vw;
 	color: #ee8b33; /* in rgba(238,139,51,0); */
   text-transform: uppercase;
 }
 
 h2 {
+  font-family: Futura;
 	font-size: 1.7vw;
   margin-top:-6%;
   margin-bottom: 0%;
-
 }
 
 p {
-	font-size: 1.3vw;
+  font-family: Arial;
+  font-size: 1.3vw;
   margin-top: -1.4%;
   margin-top: -3%;
-
-
 }
 
-i {
-  color: #1174CC;
+i { /* könnte noch etwas gedreht werden  transform: rotate(30deg);  */
+  color: #3496fd;
+  font-family: Arial;
   font-size: 1.2vw;
   margin-left: 35%;
   margin-top: -30%;
 }
 
-.after::after {
+.pfeil{
+  margin-left: 46%;
+  margin-top: -28%;
+  transform: rotate(33deg);
+}
+
+.erlaeuterungen{
+  transform:skew(-1deg,-1deg);
+  transform: rotate(-1deg);
+  /*border: 0.1vw solid red;/* test*/
+}
+
+.after::after {   /* Zeilenumbrüche erzwingen */
 	content: "\A";
 	white-space: pre;
 }
 
-.mensa {
-	color: #ee8b33; /* in rgba(238,139,51,0); */
+.mensa {    /* Schriftzugformatierung */
+  font-family: Futura;
+  color: #ee8b33; /* in rgba(238,139,51,0); */
   text-transform: uppercase;
 }
+
 
 table {
   width: 72%;
   margin-left: -19%;
+  table-layout: auto;
+  border-collapse: collapse;
+  border: 0.1vw solid #3c3c3c;
+  border-radius: 0.4vw;
+  margin-top: 2vw;
+  height: 100%;
+  min-width: 30%;
+  z-index: -1;
 }
+
 #header tr, #header tr td {
   padding: 0;
   margin: 0;
   height: 179px;
 }
+
 #header td {
   width: 33,33%;
 }
+
 #header tr td img {
   margin: 0 auto;
 }
+
 tr#headline {
   background-color: rgba(238,139,51,0.9);
+  text-align: left;
+  padding: 0.3vw;
   color: black;
+
 }
+
 table th {
   background-color: transparent;
   font-weight: bold;
   font-size: 1.1vw;
   width: auto;
+  text-align: left;
+  padding: 0.3vw;
 }
+
 table th, table td {
   border: 1px solid #fff;
   vertical-align: top;
-
+  padding: 0.3vw;
 }
+
 th.date {
   background-color: #c0c2c1;
   color: #fff;
   text-align: left;
 }
+
 td.border-none {
   border: 0 none;
 }
+
 tr.even {
-  background-color: transparent;
+  background-color: rgba(192,192,192,0.6);
 }
+
 tr.odd {
-  background-color: transparent;
+  background-color: rgba(192,192,192,0.6);
 }
+
 tr.highlighted ,
 .highlighted {
   background-color: #fadcc0;
   padding: 3px;
   margin: -8px;
 }
-.category {
-/*  width: 190px;*/
-}
-.description {
-/*  width: 450px;*/
-}
-.price {
-/*  width: 55px;*/
-  text-align: center;
-}
+
 td.icons img {
   float: left;
 }
 
-
-.dish {
-  color: red;
-  font-size: .9em;
-  margin-top: 8px;
-  overflow: hidden;
+.price { /*preis*/
+  color: #000;
+  font-weight: bold;
+  text-align: center;
 }
 
-.price { /*preis*/
-/*  color: #ec6d1e;*/
-  color: #000;
-  font-weight: bold; }
+.button { /* der sitzt noch zu tief */
+  color: white;
+  background-color: rgba(9,127,255,0.7);
+  font-size: 1.3vw;
+  border: 0.1vw solid white;
+  border-radius: 0.4vw;
+  cursor: pointer;
+  padding: 0.2vw;
+  width: 20%;
+  margin-left: 33%;
+  margin-top: -11%;
+}
 
+.button:hover {
+  border: 0.1vw solid white;
+  border-radius: 0.4vw;
+  font-weight: bold;
+  font-size: 1.4vw;
+  transition-duration: 0.2s;
+}
 
 
 /*________________________________
@@ -217,7 +260,7 @@ td.icons img {
   }
   ___________________________*/
 
-/*Dropdown-Menü*/
+/*Dropdown-Menü
 .dropdown {
   background-color:rgba(192,192,192,0.6);
   font-size: 1.3vw;
@@ -237,16 +280,16 @@ td.icons img {
   color: green;
   padding: 0.2vw 0.2vw;
   text-decoration: none;
-  display: block;}*/
+  display: block;}
 }
 
 
-.select-options { /* Dropdown Content (Hidden by Default)*/
+.select-options { /* Dropdown Content (Hidden by Default)
   display: none;
   position: absolute;
   background-color: rgba(192,192,192,0.9);
   width: 25%;
-  z-index: 1; /* was soll das eigentlich sein?*/
+  z-index: 1; /* was soll das eigentlich sein?
   margin-left: 3vw;
 }
 
@@ -270,9 +313,9 @@ td.icons img {
   transition-duration: 0.2s;
   margin-left: 3vw;
 
-}*/
+}
 
-.dropdown:hover {  /* Change the the dropdown button when the dropdown content is shown */
+.dropdown:hover {  /* Change the the dropdown button when the dropdown content is shown
   background-color: rgba(192,192,192,0.9);
   margin-left: 3vw;
   color: red;
@@ -286,30 +329,9 @@ td.icons img {
 
 
 
-/* Button */
-.button {
-  color: black;
-  background-color: rgba(238,139,51,0.9);
-  font-size: 1.3vw;
-  border: 0.1vw solid white;
-  border-radius: 0.4vw;
-  cursor: pointer;
-  padding: 0.2vw;
-  width: 25%;
-  margin-left: 27%;
-  margin-top: 0%;
-}
-
-.button:hover {
-  background-color: rgba(192,192,192,0.6);
-  border: 0.1vw solid white;
-  border-radius: 0.4vw;
-  transition-duration: 0.2s;
-
-}
 
 
-/* Tabelle */
+/* Tabelle
 table {
   table-layout: auto;
   border-collapse: collapse;
@@ -339,7 +361,7 @@ th {
   background-color: rgba(238,139,51,0.9);
   text-align: left;
   padding: 1vw;
-  rowspan:2; /* FUNKTIONIERT NOCH NICHT, ist im html container drin*/
+  rowspan:2; /* FUNKTIONIERT NOCH NICHT, ist im html container drin
 }
 /*<div class="dropdown">
   <button class="dropbtn">Was hast du gegessen?</button>

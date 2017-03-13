@@ -53,7 +53,7 @@ if ($todayLink->length == 1) {
 
     ob_start();
     ?>
-  
+
     <?php
     $table->append(ob_get_clean());
 
@@ -67,6 +67,7 @@ if ($todayLink->length == 1) {
 	<head>
 		<meta charset=UTF-8 name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="design.css" type="text/css" rel="stylesheet" style="example1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<title>Mensameter</title>
 	</head>
 	<body>
@@ -75,32 +76,20 @@ if ($todayLink->length == 1) {
 		<main>
 			<h1>Mensameter</h1>
 			<h2>Speiseplan der Mensa Finkenau </h2>
-			<div class="erlaeuterung">
+			<div class="erlaeuterungen">
 				<i> Nicht <span class="after">vergessen:</span></i>
-				<i>	Nach dem <span class="after">Essen,</span></i>
+				<i>	Nach dem <span class="after">Essen</span></i>
 				<i> Bewertung <span class="after">abgeben!</span></i>
-				<p>Mit dem <b class="mensa">Mensameter</b> weißt du <span class="after">immer,</span> was es zu essen gibt und wie's schmeckt.</p>
-
 			</div>
+			<img class="pfeil" src="pfeil.png" alt="Pfeil" width="73" height="53">
+			<p>Mit dem <b class="mensa">Mensameter</b> weißt du <span class="after">immer,</span> was es zu essen gibt und wie's schmeckt.</p>
 
-			<!-- <select class="dropdown">
-    	<option value="hide">-- Was hast du gegessen? --</option>
-    	<option>essen 1 </option>
-
-			</br></br></br>
-
-					</br>
-
-					<input type="submit" class="button" value="Bewertung abgeben">
-
-				</br></br> !-->
-
-				<div class="speiseplan">
-        <form method="POST">
+			<div class="speiseplan">
+      	<form method="POST">
             <?php
             echo $table;
             ?>
-        </form>
+      	</form>
             <?php
             foreach ($additives as $list)
                 echo pq($list)->html();
