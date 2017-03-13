@@ -1,6 +1,6 @@
 body {
   font-family: Futura;
-  font-size: 1.3vw;
+  font-size: 1vw;
  	color: black;
   background-color: rgba(192,192,192,0.8);
   background-image: url("Tablett.png");
@@ -24,12 +24,14 @@ h2 {
 	font-size: 1.7vw;
   margin-top:-6%;
   margin-bottom: 0%;
+
 }
 
 p {
 	font-size: 1.3vw;
   margin-top: -1.4%;
   margin-top: -3%;
+
 
 }
 
@@ -50,10 +52,84 @@ i {
   text-transform: uppercase;
 }
 
-.speiseplan {
-  margin-left:-15%;
-  color: red;
+table {
+  width: 72%;
+  margin-left: -19%;
 }
+#header tr, #header tr td {
+  padding: 0;
+  margin: 0;
+  height: 179px;
+}
+#header td {
+  width: 33,33%;
+}
+#header tr td img {
+  margin: 0 auto;
+}
+tr#headline {
+  background-color: rgba(238,139,51,0.9);
+  color: black;
+}
+table th {
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.1vw;
+  width: auto;
+}
+table th, table td {
+  border: 1px solid #fff;
+  vertical-align: top;
+
+}
+th.date {
+  background-color: #c0c2c1;
+  color: #fff;
+  text-align: left;
+}
+td.border-none {
+  border: 0 none;
+}
+tr.even {
+  background-color: transparent;
+}
+tr.odd {
+  background-color: transparent;
+}
+tr.highlighted ,
+.highlighted {
+  background-color: #fadcc0;
+  padding: 3px;
+  margin: -8px;
+}
+.category {
+/*  width: 190px;*/
+}
+.description {
+/*  width: 450px;*/
+}
+.price {
+/*  width: 55px;*/
+  text-align: center;
+}
+td.icons img {
+  float: left;
+}
+
+
+.dish {
+  color: red;
+  font-size: .9em;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.price { /*preis*/
+/*  color: #ec6d1e;*/
+  color: #000;
+  font-weight: bold; }
+
+
 
 /*________________________________
 .dropdown-hidden {
@@ -215,18 +291,18 @@ i {
   color: black;
   background-color: rgba(238,139,51,0.9);
   font-size: 1.3vw;
-  border: 0.1vw solid #3c3c3c;
+  border: 0.1vw solid white;
   border-radius: 0.4vw;
   cursor: pointer;
   padding: 0.2vw;
   width: 25%;
-  margin-left: 35%;
-  margin-top: -30%;
+  margin-left: 27%;
+  margin-top: 0%;
 }
 
 .button:hover {
   background-color: rgba(192,192,192,0.6);
-  border: 0.1vw solid #3c3c3c;
+  border: 0.1vw solid white;
   border-radius: 0.4vw;
   transition-duration: 0.2s;
 

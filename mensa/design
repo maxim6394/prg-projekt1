@@ -2,9 +2,11 @@ body {
   font-family: Futura;
   font-size: 1.3vw;
  	color: black;
-  background-image: url("Tablett.jpeg");
+  background-color: rgba(192,192,192,0.8);
+  background-image: url("Tablett.png");
   background-size: cover;
-  /*border: 0.1vw solid red; /* nur zum Test*/
+
+  /* border: 0.1vw solid red; /* nur zum Test*/
   position: absolute;
   width:100%;
   height: auto;
@@ -19,11 +21,33 @@ h1 {
 }
 
 h2 {
-	font-size: 2vw;
+	font-size: 1.7vw;
+  margin-top:-6%;
+  margin-bottom: 0%;
 }
 
-p { /* wird nicht genutzt */
-	font-size: 1.5vw;
+p {
+	font-size: 1.3vw;
+  margin-top: -1.4%;
+  margin-top: -3%;
+
+}
+
+i {
+  color: #1174CC;
+  font-size: 1.2vw;
+  margin-left: 35%;
+  margin-top: -30%;
+}
+
+.after::after {
+	content: "\A";
+	white-space: pre;
+}
+
+.mensa {
+	color: #ee8b33; /* in rgba(238,139,51,0); */
+  text-transform: uppercase;
 }
 
 /*________________________________
