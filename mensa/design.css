@@ -6,7 +6,8 @@ body {
   background-image: url("Tablett.png");
   background-size: cover;
   background-repeat: repeat-y;
-  border: 0.1vw solid red; /* nur zum Test*/
+  margin: auto;
+  /*border: 0.1vw solid red; /* nur zum Test*/
   position: absolute;
   width:100%;
   height: auto;
@@ -18,7 +19,7 @@ h1 {
   font-size: 7vw;
 	color: #ee8b33; /* in rgba(238,139,51,0); */
   text-transform: uppercase;
-  margin-top:7%;
+  margin-top:8%;
   margin-left: 30%;
 }
 
@@ -33,16 +34,22 @@ h2 {
 p {
   font-family: Arial;
   font-size: 1.3vw;
-  margin-top: -2%;
+  margin-top: -3%;
   margin-left: 30%;
 }
 
-i { /* könnte noch etwas gedreht werden  transform: rotate(30deg);  */
+i {
   color: #3496fd;
   font-family: Arial;
   font-size: 1.2vw;
   margin-left: 65%;
   margin-top: 0%;
+}
+
+.nonsense{
+  margin: auto;
+  /*border: 0.1vw solid red;/* test*/
+  max-width:1200px
 }
 
 .pfeil{
@@ -80,12 +87,12 @@ table {
   margin-left:11%;
   height: 100%;
   min-width: 30%;
-  z-index: -1;
+  text-align: left;
 }
 
 #header tr, #header tr td {
   padding: 0;
-  margin: 0;
+
   height: 179px;
 }
 
@@ -94,12 +101,11 @@ table {
 }
 
 #header tr td img {
-  margin: 0 auto;
+  margin: auto;
 }
 
 tr#headline {
   background-color: rgba(238,139,51,0.9);
-  text-align: left;
   padding: 0.3vw;
   color: black;
 
@@ -110,7 +116,6 @@ table th {
   font-weight: bold;
   font-size: 1.1vw;
   width: auto;
-  text-align: left;
   padding: 0.3vw;
 }
 
@@ -123,7 +128,7 @@ table th, table td {
 th.date {
   background-color: #c0c2c1;
   color: #fff;
-  text-align: left;
+
 }
 
 td.border-none {
@@ -149,7 +154,7 @@ td.icons img {
   float: left;
 }
 
-.price { /*preis*/
+.price {
   color: #000;
   font-weight: bold;
   text-align: center;
@@ -175,214 +180,3 @@ td.icons img {
   font-size: 1.4vw;
   transition-duration: 0.2s;
 }
-
-
-/*________________________________
-.dropdown-hidden {
-  display: none;
-  visibility: hidden;
-  padding-right: 10px;
-}
-.dropdown {
-  background-color:rgba(192,192,192,0.6);
-  font-size: 1.3vw;
-  color: black;
-  width: 20%;
-  padding: 0.2vw;
-  border: 0.1vw solid #3c3c3c;
-  border-radius: 0.2vw;
-  cursor: pointer;
-  margin-left: 3vw;
-  display: inline-block;
-  position: relative;
-
-
-}
-.dropdown-content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: $select-background;
-  padding: 8px 15px;
-  @include transition(all 0.2s ease-in);
-  &:after {
-    content:"";
-    width: 0;
-    height: 0;
-    border: 7px solid transparent;
-    border-color: $select-color transparent transparent transparent;
-    position: absolute;
-    top: 16px;
-    right: 10px;
-  }
-  &:hover {
-    background-color: rgba(192,192,192,0.9);
-    transition-duration: 0.2s;
-    margin-left: 3vw;
-  }
-  &:active, &.active {
-    background-color: darken($select-background, 5);
-    &:after {
-      top: 9px;
-      border-color: transparent transparent $select-color transparent;
-    }
-  }
-}
-
-.select-options {
-
-  display: none;
-  position: absolute;
-  background-color: rgba(192,192,192,0.9);
-  width: 20%;
-  z-index: 1;
-  margin-left: 3vw;
-
-  top: 100%;
-  right: 0;
-  left: 0;
-  padding: 0;
-  list-style: none;
-}
-.li {
-    margin: 0;
-    padding: 12px 0;
-    text-indent: 15px;
-    border-top: 1px solid darken($select-background, 10);
-    @include transition(all 0.15s ease-in);
-}
-.dropdown-content a:hover {
-      background-color: rgba(238,139,51,0.9);
-      transition-duration: 0.2s;
-    }
-    &[rel="hide"] {
-      display: none;
-    }
-  }
-  ___________________________*/
-
-/*Dropdown-Menü
-.dropdown {
-  background-color:rgba(192,192,192,0.6);
-  font-size: 1.3vw;
-  color: black;
-  width: 25%;
-  padding: 0.2vw;
-  border: 0.1vw solid #3c3c3c;
-  border-radius: 0.3vw;
-  cursor: pointer;
-  margin-left: 3vw;
-  -webkit-appearance: none;  /*Removes default chrome and safari style*/
-  -moz-appearance: none;  /*Removes default style Firefox*/
-
-
-/*
-&:after{ /* Links inside the dropdown  .dropdown-content a
-  color: green;
-  padding: 0.2vw 0.2vw;
-  text-decoration: none;
-  display: block;}
-}
-
-
-.select-options { /* Dropdown Content (Hidden by Default)
-  display: none;
-  position: absolute;
-  background-color: rgba(192,192,192,0.9);
-  width: 25%;
-  z-index: 1; /* was soll das eigentlich sein?
-  margin-left: 3vw;
-}
-
-/*@include transition(all 0.2s ease-in);
-&:after{ /* Links inside the dropdown  .dropdown-content a
-  color: yellow;
-  padding: 0.2vw 0.2vw;
-  text-decoration: none;
-  display: block;
-
-}*/
-/*
-.dropdown-content a:hover { /* Change color of dropdown links on hover
-  background-color: rgba(238,139,51,0.9);
-  transition-duration: 0.2s;
-  color: blue;
-}*/
-/*
-.dropdown-content:hover { /* Show the dropdown menu on hover
-  display: block;
-  transition-duration: 0.2s;
-  margin-left: 3vw;
-
-}
-
-.dropdown:hover {  /* Change the the dropdown button when the dropdown content is shown
-  background-color: rgba(192,192,192,0.9);
-  margin-left: 3vw;
-  color: red;
-}
-
-/*
-.select {  /* Change the the dropdown button when the dropdown content is shown
-  background-color: rgba(192,192,192,0.9);
-  margin-left: 3vw;
-}*/
-
-
-
-
-
-/* Tabelle
-table {
-  table-layout: auto;
-  border-collapse: collapse;
-  border: 0.1vw solid #3c3c3c;
-  border-radius: 0.4vw;
-  margin-top: 2vw;
-  height: 40vw;
-  min-width: 30%;
-  background-color:rgba(192,192,192,0.6);
-}
-
-tr {
-  border: 0.1vw solid #3c3c3c;
-  border-radius: 0.4vw;
-}
-
-td {
-  border: 0.1vw solid #3c3c3c;
-  border-radius: 0.44vw;
-  padding: 0.3vw;
-}
-
-th {
-  border: 0.1vw solid #3c3c3c;
-  border-radius: 0.44vw;
-  font-size: 1.5vw;
-  background-color: rgba(238,139,51,0.9);
-  text-align: left;
-  padding: 1vw;
-  rowspan:2; /* FUNKTIONIERT NOCH NICHT, ist im html container drin
-}
-/*<div class="dropdown">
-  <button class="dropbtn">Was hast du gegessen?</button>
-<div class="dropdown-content">
-  <a href="#">Essen 1</a>
-  <a href="#">Essen 2</a>
-  <a href="#">Essen 3</a>
-</div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn">ALTWie hat's geschmeckt?</button>
-<div class="dropdown-content">
-  <a href="#">1 Stern</a>
-  <a href="#">2 Sterne</a>
-  <a href="#">3 Sterne</a>
-  <a href="#">4 Sterne</a>
-  <a href="#">5 Sterne</a>
-</div>
-</div>
-*/

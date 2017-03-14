@@ -76,11 +76,13 @@ if ($todayLink->length == 1) {
 		<main>
 			<h1>Mensameter</h1>
 			<h2>Speiseplan der Mensa Finkenau </h2>
+
 			<div class="erlaeuterungen">
 				<i> Nicht <span class="after">vergessen:</span></i>
 				<i>	Nach dem <span class="after">Essen</span></i>
 				<i> Bewertung <span class="after">abgeben!</span></i>
 			</div>
+
 			<img class="pfeil" src="pfeil.png" alt="Pfeil" width="73" height="53">
 			<p>Mit dem <b class="mensa">Mensameter</b> weißt du <span class="after">immer,</span> was es zu essen gibt und wie's schmeckt.</p>
 
@@ -93,37 +95,9 @@ if ($todayLink->length == 1) {
             <?php
             foreach ($additives as $list)
                 echo pq($list)->html();
-
-
-
-            /*
-              for($i = 1.0; $i <= 5.0; $i+= 0.2) {
-              showStars($i);
-              echo " (".$i.")<br>";
-              } */
             ?>
-				</div>
-				<input type="submit" class="button" value="Bewertung abgeben">
-
-				<!--<table class="table">
-					<tr>
-    				<th colspan="2">Speiseplan </th>
-
-  				</tr>
-  				<tr>
-    				<td>Pizza</td>
-    				<td>Griffin</td>
-  				</tr>
-  				<tr>
-    				<td>2 Quarkkeulchen (14,16,20) , Apfelmus (3)</td>
-    				<td>Griffin</td>
-  				</tr>
-					<tr>
-    				<td>Gemüsepfanne Thai Red (2,14,19,22,24,25) , Basmatireis Klima TellerlaktosefreiVegan</td>
-    				<td>Griffin</td>
-  				</tr>
-				</table>!-->
-
+			</div>
+			<input type="submit" class="button" value="Bewertung abgeben">
 		</main>
 	</body>
 </html>
