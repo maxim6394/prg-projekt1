@@ -1,4 +1,6 @@
-
+--
+-- Tabellenstruktur für Tabelle `rating`
+--
 
 CREATE TABLE IF NOT EXISTS `rating` (
   `id` int(11) NOT NULL,
@@ -8,3 +10,23 @@ CREATE TABLE IF NOT EXISTS `rating` (
   `user_fingerprint` int(32) DEFAULT NULL,
   `time_inserted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `rating`
+--
+ALTER TABLE `rating`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `rating`
+--
+ALTER TABLE `rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
