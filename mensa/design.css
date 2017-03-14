@@ -6,12 +6,11 @@ body {
   background-image: url("Tablett.png");
   background-size: cover;
   background-repeat: repeat-y;
-  /*border: 0.1vw solid red; /* nur zum Test*/
+  border: 0.1vw solid red; /* nur zum Test*/
   position: absolute;
   width:100%;
   height: auto;
-  margin-top:4%;
-  margin-left: 30%;
+
 }
 
 h1 {
@@ -19,6 +18,8 @@ h1 {
   font-size: 7vw;
 	color: #ee8b33; /* in rgba(238,139,51,0); */
   text-transform: uppercase;
+  margin-top:7%;
+  margin-left: 30%;
 }
 
 h2 {
@@ -26,26 +27,27 @@ h2 {
 	font-size: 1.7vw;
   margin-top:-6%;
   margin-bottom: 0%;
+  margin-left: 30%;
 }
 
 p {
   font-family: Arial;
   font-size: 1.3vw;
-  margin-top: -1.4%;
-  margin-top: -3%;
+  margin-top: -2%;
+  margin-left: 30%;
 }
 
 i { /* könnte noch etwas gedreht werden  transform: rotate(30deg);  */
   color: #3496fd;
   font-family: Arial;
   font-size: 1.2vw;
-  margin-left: 35%;
-  margin-top: -30%;
+  margin-left: 65%;
+  margin-top: 0%;
 }
 
 .pfeil{
-  margin-left: 46%;
-  margin-top: -28%;
+  margin-left: 77%;
+  margin-top: -4%;
   transform: rotate(33deg);
 }
 
@@ -74,7 +76,8 @@ table {
   border-collapse: collapse;
   border: 0.1vw solid #3c3c3c;
   border-radius: 0.4vw;
-  margin-top: 2vw;
+  margin-top: 2%;
+  margin-left:11%;
   height: 100%;
   min-width: 30%;
   z-index: -1;
@@ -161,8 +164,8 @@ td.icons img {
   cursor: pointer;
   padding: 0.2vw;
   width: 20%;
-  margin-left: 33%;
-  margin-top: -11%;
+  margin-left: 63%;
+  margin-top: -10%;
 }
 
 .button:hover {
