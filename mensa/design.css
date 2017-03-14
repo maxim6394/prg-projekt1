@@ -46,6 +46,10 @@ i {
   margin-top: 0%;
 }
 
+.liste{
+  margin-left:29%;
+}
+
 .nonsense{
   margin: auto;
   /*border: 0.1vw solid red;/* test*/
@@ -170,7 +174,7 @@ td.icons img {
   padding: 0.2vw;
   width: 20%;
   margin-left: 63%;
-  margin-top: -10%;
+  margin-top: 2%;
 }
 
 .button:hover {

@@ -74,6 +74,7 @@ if ($todayLink->length == 1) {
 		<header>
 		<header/>
 		<main>
+			<div class="nonsense">
 			<h1>Mensameter</h1>
 			<h2>Speiseplan der Mensa Finkenau </h2>
 
@@ -83,7 +84,7 @@ if ($todayLink->length == 1) {
 				<i> Bewertung <span class="after">abgeben!</span></i>
 			</div>
 
-			<img class="pfeil" src="pfeil.png" alt="Pfeil" width="73" height="53">
+			<img class="pfeil" src="pfeil.png" alt="Pfeil" width="7,3%" height="5,3%">
 			<p>Mit dem <b class="mensa">Mensameter</b> weißt du <span class="after">immer,</span> was es zu essen gibt und wie's schmeckt.</p>
 
 			<div class="speiseplan">
@@ -91,13 +92,16 @@ if ($todayLink->length == 1) {
             <?php
             echo $table;
             ?>
+						<input type="submit" class="button" value="Bewertung abgeben">
       	</form>
+				<div class="liste">
             <?php
             foreach ($additives as $list)
                 echo pq($list)->html();
             ?>
+				</div>
 			</div>
-			<input type="submit" class="button" value="Bewertung abgeben">
+		</div>
 		</main>
 	</body>
 </html>
