@@ -1,18 +1,10 @@
 <?php
 require 'inc/config.php';
 require 'inc/Rating.php';
-//require 'inc/Dish.php';
 require 'inc/helpers.php';
 require 'inc/phpQuery.php';
 
-//$rating = new Rating("asdf", 1, "yo yo");
-//var_dump($rating->save());
-//var_dump(Rating::getRatingFor("asdf"));
-
-
-
-
-        const DOMAIN = 'http://speiseplan.studierendenwerk-hamburg.de';
+const DOMAIN = 'http://speiseplan.studierendenwerk-hamburg.de';
 
 
 
@@ -56,7 +48,6 @@ if ($todayLink->length == 1) {
 
     <?php
     $table->append(ob_get_clean());
-
 
     $additives = $page->find("ul.additives");
 }
