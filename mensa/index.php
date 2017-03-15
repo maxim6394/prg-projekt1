@@ -24,23 +24,43 @@ if ($todayLink->length == 1) {
         pq($el)->attr("src", DOMAIN . "/" . pq($el)->attr("src"));
     }
 
-    $table->find("#headline")->append("<th>Bewertung</th>");
+    $table->find("#headline")->append("<th>Bewertung</th><th>Kommentar</th>");
 
     $rows = $page->find("#plan table tbody tr:not(#headline)");
 
     foreach ($rows as $row) {
         $row = pq($row);
         $description = trim($row->find(".dish-description")->text());
-
+		
         if (isset($_POST["rating"]) && isset($_POST["rating"][$description]) && is_numeric($_POST["rating"][$description])) {
+			
+			$comment = null;
+			if(isset($_POST["comment"][$description]) && strlen($_POST["comment"][$description]) > 0 ){
+				$comment = htmlspecialchars(substr($_POST["comment"][$description], 0, 30));
+			}
+			
+            $num = max(min(4, intval($_POST["rating"][$description])), 1);
 
-            $num = max(min(5, intval($_POST["rating"][$description])), 1);
-
-            $rating = new Rating($description, $num, null);
+            $rating = new Rating($description, $num, $comment);
             $rating->save();
         }
-
-        pq($row)->append("<td>" . getRatingForm($description) . "</td>");
+	
+		
+		$comments = Rating::getAllComments($description);
+		$content = "";
+		if(sizeof($comments) > 0) {	
+			
+			$selectedComments = getRandomComments($comments, 5);
+			foreach($selectedComments as $comment) 
+				$content.="<i class='rating'>".$comment."</i><br>";
+		}
+		else {
+			$content = "<br>";
+		}
+		
+		
+		
+        pq($row)->append("<td>" . getRatingForm($description) . "</td><td>".$content."<input name='comment[".$description."]' type='text' placeholder='Kommentar'></input></td>");
     }
 
     ob_start();
@@ -57,9 +77,11 @@ if ($todayLink->length == 1) {
 <html lang=de>
 	<head>
 		<meta charset=UTF-8 name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 		<link href="design.css" type="text/css" rel="stylesheet" style="example1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<title>Mensameter</title>
+	
 	</head>
 	<body>
 		<header>
@@ -83,7 +105,7 @@ if ($todayLink->length == 1) {
             <?php
             echo $table;
             ?>
-						<input type="submit" class="button" value="Bewertung abgeben">
+				<input type="submit" class="button" value="Bewertung abgeben">
       	</form>
 				<div class="liste">
             <?php
@@ -94,5 +116,16 @@ if ($todayLink->length == 1) {
 			</div>
 		</div>
 		</main>
+		
+		<script>
+				$(".toggle-comment-button").click(function() {
+
+					$(this).parent().next("td").toggle("slide", { direction: "right" }, 1000);
+						
+				});
+		</script>
+		
+		
+
 	</body>
 </html>
