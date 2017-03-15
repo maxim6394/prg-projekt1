@@ -60,7 +60,7 @@ if ($todayLink->length == 1) {
 		
 		
 		
-        pq($row)->append("<td>" . getRatingForm($description) . "</td><td>".$content."<input name='comment[".$description."]' type='text' placeholder='Kommentar'></input></td>");
+        pq($row)->append("<td>" . getRatingForm($description) . "</td><td>".$content."<input maxlength=30 name='comment[".$description."]' type='text' placeholder='Kommentar'></input></td>");
     }
 
     ob_start();
