@@ -72,7 +72,7 @@ if ($todayLink->length == 1) {
 	</head>
 	<body>
 		<header>
-		<header/>
+		</header>
 		<main>
 			<div class="nonsense">
 			<h1>Mensameter</h1>
