@@ -16,6 +16,21 @@ function showDish($dish) {
     <?php
 }
 
+function getRandomComments($comments, $max=3) {
+	$arr = [];
+	$max = min(sizeof($comments), $max);
+	
+	for($i = 0 ; $i<$max; $i++){
+		$rand = rand(0, sizeof($comments) - 1 - $i);
+		
+		$arr[] = $comments[$rand][0];	
+		unset($comments[$rand]);
+		$comments = array_values($comments);
+	}
+	
+	return $arr;
+}
+
 function getRatingForm($dishName) {
     ob_start();
     $rating = Rating::getRatingFor($dishName);

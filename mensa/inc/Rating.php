@@ -25,7 +25,7 @@ class Rating {
             if ($this->isNewRecord) {
                 if ($statement = $mysqli->prepare(
                         "INSERT INTO " . static::TABLE_NAME . " (dish_name, rating, comment, user_fingerprint) VALUES (?, ?, ?, ?)")) {
-                    $fingerprint = "asdfasdf";
+                    $fingerprint = null;
                     $statement->bind_param("siss", $this->dishName, $this->rating, $this->comment, $fingerprint);
                     if ($statement->execute()) {
                         $this->isNewRecord = false;
@@ -54,7 +54,17 @@ class Rating {
     public function __toString() {
         return "[" . $this->dishName . "]: " . $this->rating . " | " . $this->comment;
     }
-
+	
+	
+	public static function getAllComments($dish) {
+		$mysqli = static::getConnection();
+		if ($mysqli !== null) {
+            $result = $mysqli->query("SELECT comment FROM " . Rating::TABLE_NAME . " WHERE comment IS NOT NULL AND dish_name=\"" . $dish . "\"");
+			return $result->fetch_all();
+        }
+		return null;
+	}
+	
     public function getAllRatings($dish) {
         $mysqli = static::getConnection();
         if ($mysqli !== null) {
