@@ -100,32 +100,7 @@ class Rating {
         return null;
     }
 
-    public function getAverageRating() {
-        return ($this->oneStarRatings * 1.0 + $this->twoStarRatings * 2.0 + $this->threeStarRatings * 3.0 + $this->fourStarRatings * 4.0 + $this->fiveStarRatings * 5.0) / max($this->getTotalRatings(), 1.0);
-    }
-
-    public function loadByName($name) {
-        $mysqli = $this->getConnection();
-        if ($mysqli !== null) {
-            $statement = $mysqli->prepare("SELECT * FROM " . static::TABLE_NAME . " where name=?");
-            $statement->bind_param("s", $name);
-
-            if ($statement->execute()) {
-                $result = $statement->get_result();
-                $row = $result->fetch_assoc();
-
-                if ($row !== null) {
-                    $this->name = $row["name"];
-                    $this->oneStarRatings = $row["oneStarRatings"];
-                    $this->twoStarRatings = $row["twoStarRatings"];
-                    $this->threeStarRatings = $row["threeStarRatings"];
-                    $this->fourStarRatings = $row["fourStarRatings"];
-                    $this->fiveStarRatings = $row["fiveStarRatings"];
-                }
-            }
-        }
-    }
-
+    
     /**
      * 
      * @global type $dbConfig
