@@ -59,8 +59,18 @@ class Rating {
 	public static function getAllComments($dish) {
 		$mysqli = static::getConnection();
 		if ($mysqli !== null) {
-            $result = $mysqli->query("SELECT comment FROM " . Rating::TABLE_NAME . " WHERE comment IS NOT NULL AND dish_name=\"" . $dish . "\"");
-			return $result->fetch_all();
+		
+			if ($statement = $mysqli->prepare(
+				"SELECT comment FROM " . Rating::TABLE_NAME . " WHERE comment IS NOT NULL AND dish_name=?")) {
+				$statement->bind_param("s", $dish);
+				$statement->execute();
+				$result = $statement->get_result();				
+				
+				if(!$result)
+					return null;
+				return $result->fetch_all();
+			}
+		
         }
 		return null;
 	}
@@ -90,8 +100,12 @@ class Rating {
     public static function getRatingFor($dish) {
         $mysqli = static::getConnection();
         if ($mysqli !== null) {
-            $result = $mysqli->query("SELECT COUNT(*) as total FROM " . Rating::TABLE_NAME . " WHERE dish_name=\"" . $dish . "\"");
-            $totalRatings = $result->fetch_row()['0'];
+            $result = $mysqli->query("SELECT COUNT(*) as total FROM " . Rating::TABLE_NAME . " WHERE dish_name=\"" . $dish . "\"");			
+            
+			if(!$result)
+				return null;
+			
+			$totalRatings = $result->fetch_row()['0'];
             $result->close();
 
             if ($totalRatings == 0)
