@@ -18,10 +18,12 @@ function showDish($dish) {
 
 function getRandomComments($comments, $max=3) {
 	$arr = [];
-	$max = min(sizeof($comments), $max);
-	
+	if(sizeof($comments) == 0)
+		return $arr;
 	for($i = 0 ; $i<$max; $i++){
-		$rand = rand(0, sizeof($comments) - 1 - $i);
+		$rand = rand(1, sizeof($comments) - $i) - 1 ; 
+		
+		$max = min(sizeof($comments), $max);
 		
 		$arr[] = $comments[$rand][0];	
 		unset($comments[$rand]);
