@@ -24,43 +24,43 @@ if ($todayLink->length == 1) {
         pq($el)->attr("src", DOMAIN . "/" . pq($el)->attr("src"));
     }
 
-    $table->find("#headline")->append("<th>Bewertung</th><th>Kommentar</th>");
+    $table->find("#headline")->append("<th>Bewertung</th><th>Kommentare</th>");
 
     $rows = $page->find("#plan table tbody tr:not(#headline)");
 
     foreach ($rows as $row) {
         $row = pq($row);
         $description = trim($row->find(".dish-description")->text());
-		
+
         if (isset($_POST["rating"]) && isset($_POST["rating"][$description]) && is_numeric($_POST["rating"][$description])) {
-			
+
 			$comment = null;
 			if(isset($_POST["comment"][$description]) && strlen($_POST["comment"][$description]) > 0 ){
 				$comment = htmlspecialchars(substr($_POST["comment"][$description], 0, 30));
 			}
-			
+
             $num = max(min(4, intval($_POST["rating"][$description])), 1);
 
             $rating = new Rating($description, $num, $comment);
             $rating->save();
         }
-	
-		
+
+
 		$comments = Rating::getAllComments($description);
 		$content = "";
-		if(sizeof($comments) > 0) {	
-			
+		if(sizeof($comments) > 0) {
+
 			$selectedComments = getRandomComments($comments, 5);
-			foreach($selectedComments as $comment) 
+			foreach($selectedComments as $comment)
 				$content.="<i class='rating'>".$comment."</i><br>";
 		}
 		else {
 			$content = "<br>";
 		}
-		
-		
-		
-        pq($row)->append("<td>" . getRatingForm($description) . "</td><td>".$content."<input maxlength=30 name='comment[".$description."]' type='text' placeholder='Kommentar'></input></td>");
+
+
+
+        pq($row)->append("<td>" . getRatingForm($description) . "</td><td>".$content."<input maxlength=30 name='comment[".$description."]' type='text' placeholder='Kommentare'></input></td>");
     }
 
     ob_start();
@@ -81,7 +81,6 @@ if ($todayLink->length == 1) {
 		<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 		<link href="design.css" type="text/css" rel="stylesheet" style="example1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
 	</head>
 	<body>
 		<header>
@@ -92,12 +91,10 @@ if ($todayLink->length == 1) {
 			<h2>Speiseplan der Mensa Finkenau </h2>
 
 			<div class="erlaeuterungen">
-				<i> Nicht <span class="after">vergessen:</span></i>
-				<i>	Nach dem <span class="after">Essen</span></i>
-				<i> Bewertung <span class="after">abgeben!</span></i>
+				<p class="hinweis"> Nicht <span class="after">vergessen:</span> Nach dem <span class="after">Essen</span>Bewertung <span class="after">abgeben!</span></p>
 			</div>
 
-			<img class="pfeil" src="pfeil.png" alt="Pfeil" width="7,3%" height="5,3%">
+			<img class="pfeil" src="pfeil.png" alt="Pfeil" width="7,0%" height="5,0%">
 			<p>Mit dem <b class="mensa">Mensameter</b> weißt du <span class="after">immer,</span> was es zu essen gibt und wie's schmeckt.</p>
 
 			<div class="speiseplan">
@@ -116,16 +113,14 @@ if ($todayLink->length == 1) {
 			</div>
 		</div>
 		</main>
-		
+
 		<script>
 				$(".toggle-comment-button").click(function() {
 
 					$(this).parent().next("td").toggle("slide", { direction: "right" }, 1000);
-						
+
 				});
 		</script>
-		
-		
 
 	</body>
 </html>

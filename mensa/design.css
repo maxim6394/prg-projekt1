@@ -7,80 +7,70 @@ body {
   background-size: cover;
   background-repeat: repeat-y;
   margin: auto;
-  /*border: 0.1vw solid red; /* nur zum Test*/
   position: absolute;
   width:100%;
   height: auto;
-
 }
 
-h1 {
+.nonsense{ /* Größe */
+  margin: auto;
+  max-width:1200px
+}
+
+h1 { /* Mensameter */
   font-family: Futura;
   font-size: 7vw;
-	color: #ee8b33; /* in rgba(238,139,51,0); */
+	color: #ee8b33;
   text-transform: uppercase;
   margin-top:8%;
   margin-left: 30%;
 }
 
-h2 {
+h2 { /* Speiseplan der Mensa Finkenau */
   font-family: Futura;
 	font-size: 1.7vw;
   margin-top:-6%;
-  margin-bottom: 0%;
   margin-left: 30%;
 }
 
-p {
+p { /* Standard Text */
   font-family: Arial;
   font-size: 1.3vw;
-  margin-top: -3%;
+  margin-top: -5%;
   margin-left: 30%;
-}
-
-i {
-  color: #3496fd;
-  font-family: Arial;
-  font-size: 1.2vw;
-  margin-left: 65%;
-  margin-top: 0%;
-}
-
-.liste{
-  margin-left:29%;
-}
-
-.nonsense{
-  margin: auto;
-  /*border: 0.1vw solid red;/* test*/
-  max-width:1200px
-}
-
-.pfeil{
-  margin-left: 77%;
-  margin-top: -4%;
-  transform: rotate(33deg);
-}
-
-.erlaeuterungen{
-  transform:skew(-1deg,-1deg);
-  transform: rotate(-1deg);
-  /*border: 0.1vw solid red;/* test*/
-}
-
-.after::after {   /* Zeilenumbrüche erzwingen */
-	content: "\A";
-	white-space: pre;
 }
 
 .mensa {    /* Schriftzugformatierung */
   font-family: Futura;
-  color: #ee8b33; /* in rgba(238,139,51,0); */
+  color: #ee8b33;
   text-transform: uppercase;
 }
 
+.hinweis{ /* auf Servierte */
+  font-style: italic;
+  color: #3496fd;
+  font-size: 1.2vw;
+  margin-left: 65.5%;
+  margin-top: 0.3%;
+}
 
-table {
+.erlaeuterungen{ /* Hinweise: leichte Drehung und Neigung auf der Servierte */
+  transform:skew(-1deg,-1deg);
+  transform: rotate(-1deg);
+}
+
+.after::after {   /* Heinweis: Zeilenumbrüche erzwingen */
+	content: "\A";
+	white-space: pre;
+}
+
+.pfeil{ /*beim Hinweis*/
+  margin-left: 76%;
+  margin-top: -4%;
+  transform: rotate(75deg);
+}
+
+table { /* Zellen Standards und Tabelleneigenschaften */
   width: 72%;
   margin-left: -19%;
   table-layout: auto;
@@ -94,77 +84,43 @@ table {
   text-align: left;
 }
 
-#header tr, #header tr td {
-  padding: 0;
-
-  height: 179px;
-}
-
-#header td {
-  width: 33,33%;
-}
-
-#header tr td img {
-  margin: auto;
-}
-
-tr#headline {
+tr#headline { /* erste Zeile */
   background-color: rgba(238,139,51,0.9);
   padding: 0.3vw;
   color: black;
-
 }
 
-table th {
+table th { /* erste Zeile und erste Spalte */
   background-color: transparent;
   font-weight: bold;
   font-size: 1.1vw;
   width: auto;
   padding: 0.3vw;
+  color: black;
 }
 
-table th, table td {
-  border: 1px solid #fff;
+table th, table td { /* Tabellenlinien */
+  border: 1px solid white;
   vertical-align: top;
   padding: 0.3vw;
 }
 
-th.date {
-  background-color: #c0c2c1;
-  color: #fff;
-
-}
-
-td.border-none {
-  border: 0 none;
-}
-
-tr.even {
+tr {
   background-color: rgba(192,192,192,0.6);
 }
 
-tr.odd {
-  background-color: rgba(192,192,192,0.6);
-}
-
-tr.highlighted ,
-.highlighted {
-  background-color: #fadcc0;
-  padding: 3px;
-  margin: -8px;
-}
-
-td.icons img {
-  float: left;
-}
-
-.price {
-  color: #000;
+.price { /* Preise */
+  color: black;
   font-weight: bold;
   text-align: center;
 }
 
-.button { /* der sitzt noch zu tief */
+i { /* Kommentare in Tabelle */
+  color: black;
+  text-align: left;
+}
+
+.button { /* Bewertung abgeben */
   color: white;
   background-color: rgba(9,127,255,0.7);
   font-size: 1.3vw;
@@ -177,10 +133,14 @@ td.icons img {
   margin-top: 2%;
 }
 
-.button:hover {
+.button:hover { /* Mouseovereffekt */
   border: 0.1vw solid white;
   border-radius: 0.4vw;
   font-weight: bold;
   font-size: 1.4vw;
   transition-duration: 0.2s;
+}
+
+.liste{ /* Zusatzstoffe unten */
+  margin-left:29%;
 }
